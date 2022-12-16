@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [question, setquestionInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -13,15 +13,12 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ animal: animalInput }),
+      body: JSON.stringify({ question: question }),
     });
-    const rawdata = await response;
     const data = await response.json();
 
-
-    setResult(rawdata);
-    //setResult(data.result);
-    setAnimalInput("");
+    setResult(data.result);
+    setquestionInput("");
   }
 
   return (
@@ -37,15 +34,10 @@ export default function Home() {
         <form onSubmit={onSubmit}>
           <input
               type="text"
-              name="apikey"
-              placeholder="Enter your openai apikey"
-          />
-          <input
-              type="text"
-              name="animal"
-              placeholder="Enter an animal"
-              value={animalInput}
-              onChange={(e) => setAnimalInput(e.target.value)}
+              name="question"
+              placeholder="Enter an question"
+              value={question}
+              onChange={(e) => setquestionInput(e.target.value)}
           />
 
           <input type="submit" value="Generate names" />

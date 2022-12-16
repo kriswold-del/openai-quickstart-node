@@ -12,13 +12,12 @@ const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: generatePrompt("goat"),
-    //prompt: generatePrompt(req.body.animal),
-    temperature: 0.6,
+    prompt: generatePrompt(req.body.question),
+    temperature: 1,
   });
   res.status(200).json({ result: completion.data.choices[0].text });
 }
 //
-function generatePrompt(animal) {
-  return `suggest a baby name`;
+function generatePrompt(question) {
+  return question;
 }
