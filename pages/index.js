@@ -36,12 +36,18 @@ export default function Home() {
         <h3>Name my pet</h3>
         <form onSubmit={onSubmit}>
           <input
-            type="text"
-            name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+              type="text"
+              name="apikey"
+              placeholder="Enter your openai apikey"
           />
+          <input
+              type="text"
+              name="animal"
+              placeholder="Enter an animal"
+              value={animalInput}
+              onChange={(e) => setAnimalInput(e.target.value)}
+          />
+
           <input type="submit" value="Generate names" />
         </form>
         <div className={styles.result}>{result}</div>
