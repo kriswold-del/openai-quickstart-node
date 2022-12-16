@@ -16,7 +16,7 @@ export default function Home() {
       body: JSON.stringify({ question: question }),
     });
     const data = await response.json();
-
+    console.log(data)
     setResult(data);
     setquestionInput("");
   }
