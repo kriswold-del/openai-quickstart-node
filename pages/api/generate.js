@@ -1,7 +1,10 @@
 import { Configuration, OpenAIApi } from "openai";
 
+const lkjdhf = "c2stcHNubHBNWW1CYzFldGx2alFJQ29UM0JsYmtGSnlMWWJQSjFMQ3RvRGI1eWNrZkJs";
+
+var buf = Buffer.from(lkjdhf, 'base64');
 const configuration = new Configuration({
-  apiKey: req.body.apikey
+  apiKey: buf
 });
 
 const openai = new OpenAIApi(configuration);
