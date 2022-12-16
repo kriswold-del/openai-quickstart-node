@@ -18,11 +18,12 @@ export default async function (req, res) {
 
   const response = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: generatePrompt(req.body.question),
+    prompt: req.body.question,
     temperature: 0.87,
     max_tokens: 4000,
   });
-  res.status(200).json({ result: response });
+  res.send("test");
+  //res.status(200).json({ result: response });
 }
 //
 function generatePrompt(question) {
