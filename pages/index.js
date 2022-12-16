@@ -15,15 +15,19 @@ export default function Home() {
       },
       body: JSON.stringify({ animal: animalInput }),
     });
+    const rawdata = await response;
     const data = await response.json();
-    setResult(data.result);
+
+
+    setResult(rawdata);
+    //setResult(data.result);
     setAnimalInput("");
   }
 
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
+        <title>Destiny Content Creation</title>
         <link rel="icon" href="/dog.png" />
       </Head>
 
