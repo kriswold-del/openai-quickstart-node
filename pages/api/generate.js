@@ -22,8 +22,8 @@ export default async function (req, res) {
     temperature: 0.87,
     max_tokens: 4000,
   });
-  res.send("test");
-  //res.status(200).json({ result: response });
+  res.send(JSON.parse(response));
+  //res.status(200).json({response);
 }
 //
 function generatePrompt(question) {
