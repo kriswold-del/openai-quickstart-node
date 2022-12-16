@@ -17,7 +17,7 @@ export default function Home() {
     });
     const data = await response.json();
 
-    setResult(data.result);
+    setResult(data);
     setquestionInput("");
   }
 
