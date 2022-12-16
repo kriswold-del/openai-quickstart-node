@@ -3,7 +3,10 @@ import { Configuration, OpenAIApi } from "openai";
 const configuration = new Configuration({
   apiKey: req.body.apikey
 });
+
 const openai = new OpenAIApi(configuration);
+res.status(200).json({ result: "TEST"});
+
 //
 // export default async function (req, res) {
 //   const completion = await openai.createCompletion({
